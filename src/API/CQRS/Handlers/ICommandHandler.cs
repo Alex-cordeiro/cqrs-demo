@@ -1,6 +1,9 @@
-﻿namespace CQRS.Demo.API.CQRS.Handlers;
+﻿using CQRS.Demo.API.Models;
+
+namespace CQRS.Demo.API.CQRS.Handlers;
 
 public interface ICommandHandler<TCommand>
 {
-    Task Handle(TCommand command);
+    Result result {get; set; }
+    Task<Result> Handle(TCommand command);
 }
